@@ -1,0 +1,52 @@
+.consent-screen {
+  padding: 52px 16px 92px;
+}
+
+.consent-title {
+  margin: 0 0 22px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+}
+
+.consent-paragraph {
+  margin: 0 0 20px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #222;
+}
+
+.last-text {
+  margin-bottom: 28px;
+}
+
+.consent-list {
+  margin: 0 0 24px;
+  padding-left: 20px;
+  color: #222;
+}
+
+.consent-list li {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.consent-check-card {
+  min-height: 105px;
+}
+
+.gender-card {
+  min-height: 133px;
+}
+
+.consent-error {
+  margin-bottom: 14px;
+}
+
+.consent-next-button {
+  margin-top: 8px;
+}

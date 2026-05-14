@@ -1,0 +1,158 @@
+.survey-screen {
+  padding: 34px 16px 40px;
+}
+
+.survey-page-title {
+  display: none;
+}
+
+.survey-question-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 18px 18px 16px;
+  margin-bottom: 14px;
+}
+
+.survey-question-text {
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+  word-break: keep-all;
+}
+
+.vertical-scale,
+.scale-vertical-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scale-edge-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  margin-left: 2px;
+}
+
+.scale-edge-label.bottom {
+  margin-top: 4px;
+}
+
+.survey-option-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 24px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+}
+
+.survey-option-row input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.line-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #999999;
+  padding: 8px 0 6px;
+  font-size: 13px;
+  font-weight: 400;
+  outline: none;
+  background: transparent;
+}
+
+.line-input::placeholder {
+  color: #aaaaaa;
+}
+
+.semantic-scale-block {
+  width: 100%;
+}
+
+.semantic-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.semantic-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.semantic-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.semantic-option input {
+  width: 13px;
+  height: 13px;
+  margin: 0;
+}
+
+.survey-error {
+  margin: 4px 2px 14px;
+}
+
+.survey-button-row {
+  display: flex;
+  margin-top: 8px;
+}
+
+.survey-button-row.with-prev {
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.survey-button-row.only-next {
+  justify-content: flex-end;
+}
+
+.survey-prev-button,
+.survey-next-button,
+.survey-submit-button {
+  width: 162px;
+  height: 57px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.survey-prev-button {
+  background: #ffffff;
+  border-color: #EEEEEE;
+  color: #222222;
+}
+
+.survey-next-button,
+.survey-submit-button {
+  background: #4c4c4c;
+  color: #ffffff;
+}
+
+.survey-prev-button:active,
+.survey-next-button:active,
+.survey-submit-button:active {
+  transform: scale(0.99);
+}

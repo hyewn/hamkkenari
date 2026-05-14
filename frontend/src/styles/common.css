@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+body {
+  background: #eef4fa;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.mobile-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #eef4fa;
+}
+
+.screen {
+  width: 100%;
+  max-width: 390px;
+  min-height: 100vh;
+  background: #eef4fa;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.form-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 24px 22px 22px;
+  margin-bottom: 18px;
+}
+
+.card-label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111;
+}
+
+.line-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #999;
+  padding: 8px 0 6px;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  background: transparent;
+  color: #111;
+}
+
+.line-input::placeholder {
+  color: #aaa;
+}
+
+.check-option,
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 24px;
+}
+
+.check-option input,
+.radio-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.radio-option + .radio-option {
+  margin-top: 26px;
+}
+
+.error-text {
+  min-height: 20px;
+  margin: 2px 2px 0;
+  font-size: 13px;
+  color: #d93025;
+}
+
+.primary-next-button {
+  display: block;
+  margin-left: auto;
+  width: 162px;
+  height: 57px;
+  border: none;
+  border-radius: 7px;
+  background: #4c4c4c;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primary-next-button:active {
+  transform: scale(0.99);
+}
+
+.complete-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.complete-message-wrap {
+  text-align: center;
+}
+
+.complete-title {
+  margin: 0 0 14px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #111111;
+}
+
+.complete-description {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555555;
+}

@@ -1,0 +1,87 @@
+.guide-screen {
+  width: 100%;
+  max-width: 390px;
+  min-height: 100vh;
+  padding: 30px 20px 28px;
+  background: #eef4fa;
+  box-sizing: border-box;
+}
+
+.guide-title {
+  margin: 0 0 34px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #111;
+  word-break: keep-all;
+}
+
+.guide-paragraph {
+  margin: 0 0 20px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #111;
+}
+
+.guide-step-block {
+  margin-bottom: 16px;
+}
+
+.guide-step-title {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111;
+}
+
+.guide-step-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #111;
+  word-break: keep-all;
+}
+
+.guide-sample-image-wrap {
+  margin-top: 28px;
+  width: 100%;
+}
+
+.guide-sample-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #c9c9c9;
+}
+
+.guide-bottom-text {
+  margin: 24px 0 120px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #111;
+  word-break: keep-all;
+}
+
+.guide-button-wrap {
+  margin-top: 0;
+}
+
+.guide-button-wrap-second {
+  margin-top: 140px;
+}
+
+.guide-next-button {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  background: #5a5a5a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.guide-next-button:active {
+  transform: scale(0.99);
+}

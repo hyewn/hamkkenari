@@ -1,0 +1,44 @@
+.login-screen {
+  min-height: 100vh;
+  padding: 72px 16px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.login-form-wrap {
+  margin-top: 180px;
+}
+
+.login-line-input {
+  width: 55%;
+}
+
+.login-button-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 180px;
+}
+
+.login-next-button {
+  width: 162px;
+  height: 57px;
+  margin-left: 0;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+}
+
+@media (max-width: 430px) {
+  .login-screen {
+    padding: 72px 16px 120px;
+  }
+}
