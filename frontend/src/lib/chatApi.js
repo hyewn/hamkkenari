@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export async function sendSpecialChat(message) {
   const res = await fetch(`${BASE_URL}/api/chat/special`, {
