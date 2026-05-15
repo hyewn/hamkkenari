@@ -1,5 +1,9 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
+const CHATBOT_TYPE =
+  import.meta.env.VITE_CHATBOT_TYPE ||
+  (window.location.hostname.includes("simple") ? "simple" : "explain");
+
 async function request(path, options = {}) {
   const response = await fetch(`${BASE_URL}${path}`, {
     headers: {
@@ -21,7 +25,11 @@ async function request(path, options = {}) {
 export async function startSessionApi({ name, birth }) {
   return request("/api/sessions/start", {
     method: "POST",
-    body: JSON.stringify({ name, birth }),
+    body: JSON.stringify({
+      name,
+      birth,
+      chatbotType: CHATBOT_TYPE,
+    }),
   });
 }
 
