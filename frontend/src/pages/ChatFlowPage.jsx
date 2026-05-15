@@ -32,11 +32,8 @@ export default function ChatFlowPage({
 
     const userMessage = trimmed;
 
-    // 먼저 입력창 비우기
     setChatInput("");
 
-    // 부모에서 user 메시지를 먼저 추가하고,
-    // 그 다음 GPT 응답을 messages에 추가해야 함
     await onSendMessage(userMessage);
 
     isSendingRef.current = false;
