@@ -1,4 +1,5 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+const CHATBOT_TYPE = import.meta.env.VITE_CHATBOT_TYPE || "explain";
 
 export async function sendSpecialChat(message) {
   const res = await fetch(`${BASE_URL}/api/chat/special`, {
@@ -6,7 +7,10 @@ export async function sendSpecialChat(message) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ message }),
+    body: JSON.stringify({
+      message,
+      chatbotType: CHATBOT_TYPE,
+    }),
   });
 
   if (!res.ok) {

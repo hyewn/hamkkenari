@@ -1,13 +1,15 @@
 import supabase from "../lib/supabase.js";
+import { findTableBySessionId } from "../lib/tableName.js";
 
 export async function saveChatQuestionStart(req, res) {
   try {
     const { sessionId, questionNumber } = req.body;
 
+    const tableName = await findTableBySessionId(sessionId);
     const column = `chat_q${questionNumber}_started_at`;
 
     const { error } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .update({
         [column]: new Date().toISOString(),
       })
@@ -26,13 +28,15 @@ export async function saveChatFinalAnswer(req, res) {
   try {
     const { sessionId, questionNumber, answer } = req.body;
 
+    const tableName = await findTableBySessionId(sessionId);
+
     const startColumn = `chat_q${questionNumber}_started_at`;
     const endColumn = `chat_q${questionNumber}_ended_at`;
     const durationColumn = `chat_q${questionNumber}_duration_seconds`;
     const answerColumn = `chat_q${questionNumber}_answer`;
 
     const { data, error: readError } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .select(startColumn)
       .eq("id", sessionId)
       .single();
@@ -47,7 +51,7 @@ export async function saveChatFinalAnswer(req, res) {
     );
 
     const { error } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .update({
         [endColumn]: endedAt.toISOString(),
         [durationColumn]: durationSeconds,
@@ -64,8 +68,6 @@ export async function saveChatFinalAnswer(req, res) {
   }
 }
 
-// 대화 로그는 최종 wide table에는 저장 안 함.
-// 필요하면 console만 남김.
 export async function saveChatMessages(req, res) {
   return res.status(200).json({ message: "채팅 메시지 로그 저장 생략" });
 }
