@@ -1,11 +1,14 @@
 import supabase from "../lib/supabase.js";
+import { findTableBySessionId } from "../lib/tableName.js";
 
 export async function saveSurveyAnswers(req, res) {
   try {
     const { sessionId, answers } = req.body;
 
+    const tableName = await findTableBySessionId(sessionId);
+
     const { error } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .update(answers)
       .eq("id", sessionId);
 
