@@ -1,11 +1,14 @@
 import supabase from "../lib/supabase.js";
+import { getTableName, findTableBySessionId } from "../lib/tableName.js";
 
 export async function startSession(req, res) {
   try {
-    const { name, birth } = req.body;
+    const { name, birth, chatbotType } = req.body;
+
+    const tableName = getTableName(chatbotType);
 
     const { data, error } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .insert({
         login_name: name,
         login_birth: birth,
@@ -15,7 +18,9 @@ export async function startSession(req, res) {
 
     if (error) throw error;
 
-    return res.status(201).json({ sessionId: data.id });
+    return res.status(201).json({
+      sessionId: data.id,
+    });
   } catch (error) {
     console.error("START SESSION ERROR:", error);
     return res.status(500).json({ error: "세션 생성 실패" });
@@ -27,8 +32,10 @@ export async function updateProfile(req, res) {
     const { sessionId } = req.params;
     const { name, birth, gender, agreed } = req.body;
 
+    const tableName = await findTableBySessionId(sessionId);
+
     const { error } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .update({
         consent_name: name,
         consent_birth: birth,
@@ -50,8 +57,10 @@ export async function submitSession(req, res) {
   try {
     const { sessionId } = req.params;
 
+    const tableName = await findTableBySessionId(sessionId);
+
     const { data, error: readError } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .select("started_at")
       .eq("id", sessionId)
       .single();
@@ -59,14 +68,14 @@ export async function submitSession(req, res) {
     if (readError) throw readError;
 
     const submittedAt = new Date();
-    const startedAt = new Date(data.started_at);
+    const startedAt = data.started_at ? new Date(data.started_at) : submittedAt;
 
     const totalDurationSeconds = Math.floor(
       (submittedAt.getTime() - startedAt.getTime()) / 1000
     );
 
     const { error } = await supabase
-      .from("participant_results")
+      .from(tableName)
       .update({
         submitted_at: submittedAt.toISOString(),
         total_duration_seconds: totalDurationSeconds,
